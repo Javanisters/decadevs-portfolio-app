@@ -5,5 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProjectRepository extends JpaRepository {
-
+    Iterable<Project> findProjectsByUserId(Long id);
+    Iterable<Project> findProjectsByStack(String stack);
 }

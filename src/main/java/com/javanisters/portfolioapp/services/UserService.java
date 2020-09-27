@@ -1,7 +1,13 @@
 package com.javanisters.portfolioapp.services;
 
-import org.springframework.stereotype.Service;
+import com.javanisters.portfolioapp.models.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-@Service
+
 public interface UserService {
+    UserDetails loadUserByUsername(String email) throws UsernameNotFoundException;
+
+    void signUpUser(User user);
+
 }
